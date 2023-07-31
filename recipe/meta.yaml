@@ -1,5 +1,5 @@
 {% set name = "auto_rxn" %}
-{% set version = "2023.6.1" %}
+{% set version = "2023.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/auto_rxn-{{ version }}.tar.gz
-  sha256: 616825da1be19de17f01065619d7af57481083e691ec42a7fef4931b96b53317 
+  sha256: ea9bd211d20fef5a1d9b0cd7c2c360d40f5d44636d652c5f01d1a848011b12fc
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
   entry_points:
-    - "auto_rxn=auto_rxn.__main__:main"
+    - auto_rxn=auto_rxn.__main__:main
 
 requirements:
   host:
