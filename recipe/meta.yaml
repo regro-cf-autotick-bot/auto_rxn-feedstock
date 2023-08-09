@@ -1,5 +1,5 @@
 {% set name = "auto_rxn" %}
-{% set version = "2023.8.0" %}
+{% set version = "2023.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/auto_rxn-{{ version }}.tar.gz
-  sha256: ce990374353c95d945215ead2c902117cefeb6f43eee9ff1fa98872c37e05d22
+  sha256: a3ab84ddd721ee1cfb94c58be253718081b3f602cd13e24798c1843019d8a763
 
 build:
   noarch: python
@@ -23,13 +23,15 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - appdirs
+    - platformdirs
     - click
     - happi
     - pandas
     - bluesky
     - suitcase-csv
     - packaging
+    - tomli
+    - tomli-w
 
 test:
   imports:
