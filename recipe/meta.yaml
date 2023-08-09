@@ -1,5 +1,5 @@
 {% set name = "auto_rxn" %}
-{% set version = "2023.7.0" %}
+{% set version = "2023.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/auto_rxn-{{ version }}.tar.gz
-  sha256: ea9bd211d20fef5a1d9b0cd7c2c360d40f5d44636d652c5f01d1a848011b12fc
+  sha256: ce990374353c95d945215ead2c902117cefeb6f43eee9ff1fa98872c37e05d22
 
 build:
   noarch: python
@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - python >=3.7
-    - flit-core
+    - hatchling
     - pip
   run:
     - python >=3.7
