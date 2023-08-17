@@ -12,9 +12,10 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - auto_rxn=auto_rxn.__main__:main
+    - auto-rxn=auto_rxn.__main__:main
 
 requirements:
   host:
@@ -39,6 +40,7 @@ test:
   commands:
     #- pip check  # bluesky recipe has bad depndencies, breaks pip check, should check once upstream fixed
     - auto_rxn --help
+    - auto-rxn --help
   requires:
     - pip
 
