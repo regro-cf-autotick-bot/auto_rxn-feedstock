@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/auto_rxn-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/auto_rxn-{{ version }}.tar.gz
   sha256: 482101dc4f6474a15675c64bc4305bb34979e0037f88282afba3da45b526b4e7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - auto_rxn=auto_rxn.__main__:main
     - auto-rxn=auto_rxn.__main__:main
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - platformdirs
     - click
     - happi
@@ -43,6 +43,7 @@ test:
     - auto-rxn --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/uw-madison-chem-shops/auto_rxn
